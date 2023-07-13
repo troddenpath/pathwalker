@@ -310,11 +310,11 @@ function preservescores() {
 
 function checkscores() {
     let gas, art, spt, tvl, UNANSWERED;
-    GAS = localStorage.getItem('gas');
-    ART = localStorage.getItem('art');
-    SPT = localStorage.getItem('spt');
-    TVL = localStorage.getItem('tvl');
-    unanswered = localStorage.getItem('UNANSWERED');
+    GAS = parseInt(localStorage.getItem('gas'));
+    ART = parseInt(localStorage.getItem('art'));
+    SPT = parseInt(localStorage.getItem('spt'));
+    TVL = parseInt(localStorage.getItem('tvl'));
+    unanswered = parseInt(localStorage.getItem('UNANSWERED'));
     console.log("GAS: ", GAS);
     console.log("ART: ", ART);
     console.log("SPT: ", SPT);
@@ -335,11 +335,11 @@ function preservesecondscores() {
 
 function checksecondscores() {
     let gen, hum, stem, abm, UNANSWERED;
-    GEN = localStorage.getItem('gen');
-    HUM = localStorage.getItem('hum');
-    STEM = localStorage.getItem('stem');
-    ABM = localStorage.getItem('abm');
-    unanswered = localStorage.getItem('UNANSWERED');
+    GEN = parseInt(localStorage.getItem('gen'));
+    HUM = parseInt(localStorage.getItem('hum'));
+    STEM = parseInt(localStorage.getItem('stem'));
+    ABM = parseInt(localStorage.getItem('abm'));
+    unanswered = parseInt(localStorage.getItem('UNANSWERED'));
     console.log("GEN: ", GEN);
     console.log("HUM: ", HUM);
     console.log("STEM: ", STEM);
@@ -653,13 +653,13 @@ window.onload = function() {
     console.log("Unanswered: ", unanswered);
     
     if (GEN > HUM && GEN > STEM && GEN > ABM) {
-        GEN += GAS;
+        parseInt(GEN) += parseInt(GAS);
     } else if (HUM > GEN && HUM > STEM && HUM > ABM) {
-        HUM += GAS;
+        parseInt(HUM) += parseInt(GAS);
     } else if (STEM > GEN && STEM > HUM && STEM > ABM) {
-        STEM += GAS;
+        parseInt(STEM) += parseInt(GAS);
     } else if (ABM > GEN && ABM > STEM && ABM > HUM) {
-        ABM += GAS;
+        parseInt(ABM) += parseInt(GAS);
     } else {
         console.log("Not resolved.");
     }
