@@ -639,6 +639,12 @@ window.onload = function() {
   }
 
   function computestrand() {
+    GAS = parseInt(GAS);
+    HUM = parseInt(HUM);
+    GEN = parseInt(GEN);
+    STEM = parseInt(STEM);
+    ABM = parseInt(ABM);
+
     console.log("GAS: ", GAS);
 
     console.log("GEN: ", GEN);
@@ -653,26 +659,26 @@ window.onload = function() {
     console.log("Unanswered: ", unanswered);
     
     if (GEN > HUM && GEN > STEM && GEN > ABM) {
-        parseInt(GEN) += parseInt(GAS);
+        GEN += GAS;
     } else if (HUM > GEN && HUM > STEM && HUM > ABM) {
-        parseInt(HUM) += parseInt(GAS);
+        HUM += GAS;
     } else if (STEM > GEN && STEM > HUM && STEM > ABM) {
-        parseInt(STEM) += parseInt(GAS);
+        STEM += GAS;
     } else if (ABM > GEN && ABM > STEM && ABM > HUM) {
-        parseInt(ABM) += parseInt(GAS);
+        ABM += GAS;
     } else {
         console.log("Not resolved.");
     }
   }
 
   function decidestrand() {
-    if (GEN > HUM && GEN > STEM && GEN > ABM) {
+    if (GEN > ART && GEN > SPT && GEN > TVL && GEN > HUM && GEN > STEM && GEN > ABM) {
         window.location = "../tracks/genassessment.html";
-    } else if (HUM > GEN && HUM > STEM && HUM > ABM) {
+    } else if (HUM > ART && HUM > SPT && HUM > TVL && HUM > GEN && HUM > STEM && HUM > ABM) {
         window.location = "../tracks/humassessment.html";
-    } else if (STEM > GEN && STEM > HUM && STEM > ABM) {
+    } else if (STEM > ART && STEM > SPT && STEM > TVL && STEM > GEN && STEM > HUM && STEM > ABM) {
         window.location = "../tracks/stemassessment.html";
-    } else if (ABM > GEN && ABM > HUM && ABM > STEM) {
+    } else if (ABM > ART && ABM > SPT && ABM > TVL && ABM > GEN && ABM > HUM && ABM > STEM) {
         window.location = "../tracks/abmassessment.html";
     } else {
         console.log("Not resolved.");
