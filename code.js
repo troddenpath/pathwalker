@@ -678,3 +678,38 @@ window.onload = function() {
         console.log("Not resolved.");
     }
   }
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    let schoolCards = document.querySelectorAll('.schoolcard');
+    
+    schoolCards.forEach(function(schoolCard) {
+      schoolCard.addEventListener('click', function() {
+        let schoolid = schoolCard.querySelector('.schoolid').innerText;
+        localStorage.setItem('schoolid', schoolid);
+        console.log(schoolid);
+        window.location.href = './apply.html';
+
+        let path = window.location.pathname;
+        let filename = path.substring(path.lastIndexOf('/') + 1);
+
+        if (filename == 'abmassessment.html') {
+            localStorage.setItem('strand', 'Accountancy and Business Management Strand');
+        } else if (filename == 'artassessment.html') {
+            localStorage.setItem('strand', 'Arts and Design Track');
+        } else if (filename == 'genassessment.html') {
+            localStorage.setItem('strand', 'General Academic Strand');
+        } else if (filename == 'humassessment.html') {
+            localStorage.setItem('strand', 'Humanities and Social Sciences Strand');
+        } else if (filename == 'sptassessment.html') {
+            localStorage.setItem('strand', 'Sports Track');
+        } else if (filename == 'stemassessment.html') {
+            localStorage.setItem('strand', 'Science, Technology, Engineering, and Mathematics Strand');
+        } else if (filename == 'tvlassessment.html') {
+            localStorage.setItem('strand', 'Technical-Vocational-Livelihood Track');
+        } else {
+            console.log('Retry');
+        }
+      });
+    });
+  })
