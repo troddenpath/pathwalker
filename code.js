@@ -666,13 +666,13 @@ window.onload = function() {
   }
 
   function decidestrand() {
-    if (GEN > ART && GEN > SPT && GEN > TVL && GEN > HUM && GEN > STEM && GEN > ABM) {
+    if (GEN > HUM && GEN > STEM && GEN > ABM) {
         window.location = "../tracks/genassessment.html";
-    } else if (HUM > ART && HUM > SPT && HUM > TVL && HUM > GEN && HUM > STEM && HUM > ABM) {
+    } else if (HUM > GEN && HUM > STEM && HUM > ABM) {
         window.location = "../tracks/humassessment.html";
-    } else if (STEM > ART && STEM > SPT && STEM > TVL && STEM > GEN && STEM > HUM && STEM > ABM) {
+    } else if (STEM > GEN && STEM > HUM && STEM > ABM) {
         window.location = "../tracks/stemassessment.html";
-    } else if (ABM > ART && ABM > SPT && ABM > TVL && ABM > GEN && ABM > HUM && ABM > STEM) {
+    } else if (ABM > GEN && ABM > HUM && ABM > STEM) {
         window.location = "../tracks/abmassessment.html";
     } else {
         console.log("Not resolved.");
