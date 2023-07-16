@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Calistoga&family=Roboto+Mono&display=swap');
+
+.formcontainer {
+    min-width: 45vw;
+    margin: auto;
+    padding: 1em;
+}
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: .25em;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: .5em 0;
+    display: inline-block;
+    background-color: #ffffff69;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+textarea {
+    min-height: 10rem;
+}
+
+input[type="submit"] {
+    background-color: #4caf4f;
+    color: white;
+    padding: 1em;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+
+
+
+.apply {
+    min-height: 100vh;
+    min-width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-left: 10em;
+    padding-right: 10em;
+}
+
+
+
+
+
+.reminder {
+    max-width: 45vw;
+    padding: 1em;
+    background-color: rgba(255, 235, 205, 0.623);
+}
+
+.reminder > ul {
+    padding: 1em;
+}
+
+h1 {
+    font-family: 'Calistoga', cursive;
+    font-size: 3rem;
+}
+
+
+#marquee {
+    color: #c3073f50;
+    font-size: 15rem;
+    position: fixed;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    line-height: .8em;
+  }
+
+
+
+@media only screen and (max-width: 600px) {
+    .formcontainer {
+        min-width: 90vw;
+    }
+
+    .reminder {
+        min-width: 90vw;
+    }
+}

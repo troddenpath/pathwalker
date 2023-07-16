@@ -288,16 +288,21 @@ function firstassess() {
 
 function decidetrack() {
     if (GAS > ART && GAS > SPT && GAS > TVL) {
-        window.location = "./tracks/gasassessment.html"
+        window.location = "./tracks/gasassessment.html";
     } else if (ART > GAS && ART > SPT && ART > TVL) {
-        window.location = "./tracks/artassessment.html"
+        window.location = "./tracks/artassessment.html";
     } else if (SPT > GAS && SPT > ART && SPT > TVL) {
-        window.location = "./tracks/sptassessment.html"
+        window.location = "./tracks/sptassessment.html";
     } else if (TVL > GAS && TVL > ART && TVL > SPT) {
-        window.location = "./tracks/tvlassessment.html"
-    } else (
+        window.location = "./tracks/tvlassessment.html";
+    } else {
+        localStorage.setItem('gas', '0');
+        localStorage.setItem('art', '0');
+        localStorage.setItem('spt', '0');
+        localStorage.setItem('tvl', '0');
+        localStorage.setItem('UNANSWERED', '0');
         console.log("Not resolved.")
-    )
+    }
 }
 
 function preservescores() {
