@@ -296,11 +296,16 @@ function decidetrack() {
     } else if (TVL > GAS && TVL > ART && TVL > SPT) {
         window.location = "./tracks/tvlassessment.html";
     } else {
-        localStorage.setItem('gas', '0');
-        localStorage.setItem('art', '0');
-        localStorage.setItem('spt', '0');
-        localStorage.setItem('tvl', '0');
-        localStorage.setItem('UNANSWERED', '0');
+        alert('There is a tie between strands. Please check more skills or change your answers.')
+        GAS = 0;
+        ART = 0;
+        SPT = 0;
+        TVL = 0;
+        localStorage.setItem('gas', GAS);
+        localStorage.setItem('art', ART);
+        localStorage.setItem('spt', SPT);
+        localStorage.setItem('tvl', TVL);
+        localStorage.setItem('UNANSWERED', unanswered);
         console.log("Not resolved.")
     }
 }
@@ -314,7 +319,6 @@ function preservescores() {
 }
 
 function checkscores() {
-    let gas, art, spt, tvl, UNANSWERED;
     GAS = parseInt(localStorage.getItem('gas'));
     ART = parseInt(localStorage.getItem('art'));
     SPT = parseInt(localStorage.getItem('spt'));
@@ -373,6 +377,13 @@ window.onload = function() {
         checksecondscores();
     } else if (pageTitle === 'Path Walker - ACCOUNTANCY AND BUSINESS MANAGEMENT') {
         checksecondscores();
+    } else if (pageTitle === 'Path Walker Results') {
+        console.log(localStorage.getItem('strand'));
+        console.log(localStorage.getItem('schoolid'));
+        console.log(localStorage.getItem('schoolname'));
+    } else if (pageTitle === 'Path Walker List') {
+        console.log(localStorage.getItem('strand'));
+        console.log(localStorage.getItem('schoolname'));
     } else {
         localStorage.clear();
         console.log('Non-assessment page.');
@@ -697,8 +708,13 @@ window.onload = function() {
     schoolCards.forEach(function(schoolCard) {
       schoolCard.addEventListener('click', function() {
         let schoolid = schoolCard.querySelector('.schoolid').innerText;
+        let schoolname = schoolCard.querySelector('.schoolname').innerText;
+        let schooladdr = schoolCard.querySelector('.schooladdr').innerText;
         localStorage.setItem('schoolid', schoolid);
+        localStorage.setItem('schooladdr', schooladdr);
+        localStorage.setItem('schoolname', schoolname);
         console.log(schoolid);
+        console.log(schoolname);
         window.location.href = './apply.html';
 
         let path = window.location.pathname;
