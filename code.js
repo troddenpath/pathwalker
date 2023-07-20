@@ -380,7 +380,7 @@ window.onload = function() {
     } else if (pageTitle === 'Path Walker Results') {
         console.log(localStorage.getItem('strand'));
         console.log(localStorage.getItem('schoolid'));
-        console.log(localStorage.getItem('schoolname'));
+        console.log(localStorage.getItem('schoolName'));
     } else if (pageTitle === 'Path Walker List') {
         console.log(localStorage.getItem('strand'));
         console.log(localStorage.getItem('schoolname'));
